@@ -13,7 +13,8 @@ import {
     deleteTask,
     addColumn,
     deleteColumn,
-    dragTask
+    dragTask,
+    selectAllBoardsById
 } from '../../redux/slices/boardsSlice';
 
 import Board from '../../components/Board';
@@ -29,6 +30,8 @@ const BoardContainer:React.FC = () => {
 
     const allTasks = useSelector(selectAllTasks);
     const columns = useSelector((state: any) => selectColumnsByBoardId(state, id));
+
+    const board = useSelector((state: any) => selectAllBoardsById(state, id))
 
     const getTasks = (id: string) => allTasks.filter(task => task.columnId === id);
 
@@ -83,7 +86,7 @@ const BoardContainer:React.FC = () => {
         }))
     }
     
-    return columns.length > 0 ? (
+    return board ? (
         <Board
             columns={columns}
             getTasks={getTasks}

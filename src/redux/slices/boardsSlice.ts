@@ -78,7 +78,8 @@ export const {
 } = boardsSlice.actions
 
 export const {
-	selectAll: selectAllBoards
+	selectAll: selectAllBoards,
+	selectById: selectAllBoardsById
 } = boardsAdapter.getSelectors((state: IState) => state.boards);
 
 export const {
