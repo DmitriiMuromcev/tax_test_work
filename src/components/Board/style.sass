@@ -1,0 +1,58 @@
+@import '../../styles/mixins'
+    
+.board
+    align-items: flex-start
+    +hide-scrollbar
+
+    &__column
+        margin-right: 20px
+        background-color: #4CD4B0
+        border-radius: 10px
+        padding: 20px
+        min-width: 30%
+        position: relative
+        flex-direction: column
+         
+    &__button
+        padding: 10px
+        margin-top: 20px
+        border-radius: 20px
+        border: 2px solid white
+
+        &_add-column
+            margin-top: 0
+            white-space: nowrap
+            background-color: #34ace0
+            padding: 20px
+            border-radius: 10px
+
+.task
+    margin-top: 20px
+    position: relative
+
+    &:first-child
+        margin-top: 0
+
+    &__input
+        padding: 20px
+        border-radius: 10px
+        font-size: 20px
+        width: 100%
+
+        +placeholder
+            color: #D1D5D8
+    
+
+.delete-icon    
+    font-size: 30px
+    background-color: #ED4C67
+    transform: rotate(45deg)
+    border-radius: 50%
+    width: 30px
+    height: 30px
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    right: -15px
+    top: -15px
