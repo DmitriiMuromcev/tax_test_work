@@ -19,7 +19,7 @@ interface IBoard {
 
     dragStartHandler: (e: React.DragEvent<HTMLDivElement>, id: string) => void
     dropHandler: (e: React.DragEvent<HTMLDivElement>, id: string) => void
-    dragOverHandler: (e: React.DragEvent<HTMLDivElement>, id: string) => void
+    dragOverHandler: (e: React.DragEvent<HTMLDivElement>) => void
 }
 
 const Board:React.FC<IBoard> = props => {
@@ -52,8 +52,8 @@ const Board:React.FC<IBoard> = props => {
                                     key={task.id}
                                     draggable={true}
                                     onDragStart={(e) => dragStartHandler(e, task.id)}
-                                    onDragOver={(e) => dragOverHandler(e, column.id)}
-                                    onDrop={(e) => dropHandler(e, task.id)}
+                                    onDragOver={(e) => dragOverHandler(e)}
+                                    onDrop={(e) => dropHandler(e, column.id)}
 
                                 >
                                     <input

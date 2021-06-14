@@ -63,15 +63,15 @@ const BoardContainer:React.FC = () => {
        dispatch(fetchBoard());
     }, [])
 
-    const dragStartHandler = (e: any, id: string) => {
+    const dragStartHandler = (e: React.DragEvent<HTMLDivElement>, id: string) => {
         setDragable(id)
     }
 
-    const dragOverHandler = (e: any, id: string) => {
+    const dragOverHandler = (e: React.DragEvent<HTMLDivElement>) => {
         e.preventDefault();
     }
 
-    const dropHandler = (e: any, columnId: string) => {
+    const dropHandler = (e: React.DragEvent<HTMLDivElement>, columnId: string) => {
         e.preventDefault();
 
         setDragable('')
